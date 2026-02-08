@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Romantic, soft, interactive 5-page birthday surprise website with pastel dreamy aesthetic, animated hearts/glitter/stars, recurring cartoon rabbit, smooth page fade transitions, background music, and per-page interactive prompts plus replay.",
+  "architectural_notes": [
+    "Structure site as 5 distinct pages/views with consistent themed styling and a reusable heart-shaped 'Next' navigation component.",
+    "Provide global background music playback across navigation with user-friendly control considerations (e.g., autoplay restrictions).",
+    "Implement reusable animation layers (hearts/glitter/stars) and per-page decorative variants including rabbit character assets.",
+    "Use smooth fade transitions for page changes to maintain dreamy feel."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Cute cartoon rabbit hopping pose, pastel outline, dreamy style (rabbit-hopping.dim_512x512.png)\n- Cute cartoon rabbit holding a tiny balloon, pastel outline, dreamy style (rabbit-balloon.dim_512x512.png)\n- Soft pastel sky background with subtle clouds and dreamy gradient (pastel-sky-bg.dim_1920x1080.png)\n- Small soft-gold sparkle/stars overlay tile, seamless pattern (sparkle-tile.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-5-page-linear-interactive-birthday-website-experience-with-the-exact-page-breakdown-content-below-including-a-heart-shaped-next-button-on-pages-1-4-and-a-replay-the-surprise-button-on-page-5-that-restarts-the-experience-back-to-page-1-page-1-welcome-excitement-title-a-special-surprise-for-you-body-text-preserve-line-breaks-hey-baby-tomorrow-is-your-birthday-how-are-you-feeling-right-now-interactive-options-buttons-super-excited-calm-but-happy-a-little-shy-very-loved-today-page-2-our-love-memories-title-us-text-every-moment-with-you-feels-special-to-me-question-what-s-your-favorite-memory-with-me-options-late-night-talks-when-we-laugh-together-every-moment-all-of-the-above-page-3-birthday-wishes-page-title-your-wish-text-make-a-wish-for-your-birthday-a-typing-box-where-he-can-write-his-wish-page-4-good-luck-love-page-title-for-you-text-preserve-line-breaks-i-wish-you-the-best-of-luck-in-everything-your-dreams-your-goals-your-life-i-ll-always-cheer-for-you-page-5-grand-birthday-finale-big-centered-text-preserve-line-breaks-happy-birthday-my-love-i-hope-your-day-is-as-beautiful-as-you-are-i-love-you-always-bottom-button-replay-the-surprise",
+      "title": "Create a 5-page, linear, interactive birthday website experience with the exact page breakdown/content below, including a heart-shaped “Next” button on Pages 1–4 and a “Replay the Surprise” button on Page 5 that restarts the experience back to Page 1.\n\nPage 1 — Welcome & Excitement\n- Title: “A Special Surprise for You 💙”\n- Body text (preserve line breaks):\n  “Hey baby… 💙\n  Tomorrow is your birthday 🎂✨\n  How are you feeling right now?”\n- Interactive options (buttons):\n  - “Super excited 😆”\n  - “Calm but happy 💙”\n  - “A little shy 🫣”\n  - “Very loved today 🫶”\n\nPage 2 — Our Love & Memories\n- Title: “Us ✨”\n- Text: “Every moment with you feels special to me.”\n- Question: “What’s your favorite memory with me?”\n- Options:\n  - “Late-night talks 🌙”\n  - “When we laugh together 😂”\n  - “Every moment 💙”\n  - “All of the above ✨”\n\nPage 3 — Birthday Wishes Page\n- Title: “Your Wish ✨”\n- Text: “Make a wish for your birthday…”\n- A typing box where he can write his wish\n\nPage 4 — Good Luck & Love Page\n- Title: “For You 💙”\n- Text (preserve line breaks):\n  “I wish you the best of luck in everything — your dreams, your goals, your life.\n  I’ll always cheer for you.”\n\nPage 5 — Grand Birthday Finale 🎉\n- Big centered text (preserve line breaks):\n  “HAPPY BIRTHDAY MY LOVE 💙🎂\n  I hope your day is as beautiful as you are.\n  I love you always.”\n- Bottom button: “Replay the Surprise” 💫",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-romantic-pastel-dreamy-visual-theme-across-all-pages-using-baby-blue-lavender-blush-pink-cream-and-soft-gold-sparkles-the-overall-feel-must-be-warm-personal-and-magical-like-a-birthday-surprise",
+      "title": "Apply a consistent romantic, pastel, dreamy visual theme across all pages using: baby blue, lavender, blush pink, cream, and soft gold sparkles. The overall feel must be warm, personal, and “magical like a birthday surprise.”",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-smooth-fade-transitions-between-pages-screens-so-navigation-feels-gentle-and-magical-including-when-using-next-and-replay-the-surprise",
+      "title": "Add smooth fade transitions between pages/screens so navigation feels gentle and magical (including when using “Next” and “Replay the Surprise”).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-ambient-animated-visuals-throughout-the-experience-floating-hearts-gentle-glitter-tiny-stars-also-include-page-specific-visuals-page-1-floating-hearts-background-a-cute-hopping-rabbit-page-2-soft-sparkles-around-the-text-page-3-a-cute-rabbit-holding-a-tiny-balloon-page-4-glowing-gold-sparkles-slow-floating-hearts-page-5-confetti-hearts-flying-balloons-glitter-rain-cute-rabbits-and-a-soft-pastel-sky-background",
+      "title": "Implement ambient animated visuals throughout the experience:\n- Floating hearts\n- Gentle glitter\n- Tiny stars\nAlso include page-specific visuals:\n- Page 1: floating hearts background + a cute hopping rabbit\n- Page 2: soft sparkles around the text\n- Page 3: a cute rabbit holding a tiny balloon\n- Page 4: glowing gold sparkles + slow floating hearts\n- Page 5: confetti hearts, flying balloons, glitter rain, cute rabbits, and a soft pastel sky background",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-soft-instrumental-background-music-that-plays-across-the-whole-experience-with-gentle-behavior-starts-automatically-when-the-experience-begins-with-a-clear-fallback-if-autoplay-is-blocked-loops-seamlessly-does-not-restart-on-every-page-navigation-provide-a-simple-unobtrusive-control-to-mute-unmute-and-optionally-adjust-volume",
+      "title": "Add soft instrumental background music that plays across the whole experience with gentle behavior:\n- Starts automatically when the experience begins (with a clear fallback if autoplay is blocked)\n- Loops seamlessly\n- Does not restart on every page navigation\n- Provide a simple, unobtrusive control to mute/unmute (and optionally adjust volume)",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-capture-and-use-the-user-s-interactions-on-each-page-in-the-ui-page-1-selecting-a-feeling-option-visibly-highlights-the-selected-option-and-keeps-it-selected-until-changed-page-2-selecting-a-memory-option-visibly-highlights-the-selected-option-page-3-wish-input-should-allow-typing-and-preserve-the-entered-text-when-navigating-forward-back-during-the-session-optional-on-page-5-reflect-the-page-3-wish-somewhere-subtly-only-if-it-can-be-done-without-adding-new-user-facing-text-beyond-what-s-already-specified",
+      "title": "Capture and use the user’s interactions on each page in the UI:\n- Page 1: selecting a feeling option visibly highlights the selected option (and keeps it selected until changed)\n- Page 2: selecting a memory option visibly highlights the selected option\n- Page 3: wish input should allow typing and preserve the entered text when navigating forward/back during the session\n- Optional: On Page 5, reflect the Page 3 wish somewhere subtly (only if it can be done without adding new user-facing text beyond what’s already specified)",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-required-static-assets-generated-images-to-the-frontend-and-use-them-in-the-ui-animations-store-generated-assets-under-frontend-public-assets-generated-and-reference-them-directly-from-the-frontend-do-not-serve-images-through-the-backend",
+      "title": "Add required static assets (generated images) to the frontend and use them in the UI/animations. Store generated assets under frontend/public/assets/generated and reference them directly from the frontend (do not serve images through the backend).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build 5-page interactive birthday website with specified page content (Welcome, Memories, Wish input, Love/Good luck message, Finale)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement pastel dreamy theme (baby blue, lavender, blush pink, cream) with soft gold sparkle accents and warm magical styling",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add animated visuals: floating hearts, gentle glitter, tiny stars; finale effects (confetti hearts, balloons, glitter rain)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Include cute cartoon rabbit appearing across pages with variations (hopping on page 1, holding balloon on page 3, plus finale rabbits)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add smooth fade transitions between pages and heart-shaped 'Next' navigation button on each page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add soft instrumental background music throughout the experience",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add Finale 'Replay the Surprise' button to restart the experience",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic pastel 5-page interactive birthday surprise site with animations, music, and replay",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

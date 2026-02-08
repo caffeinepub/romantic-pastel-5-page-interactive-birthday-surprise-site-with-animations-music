@@ -1,0 +1,286 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Romantic pastel 5-screen birthday surprise (animations + music + replay)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement the 5-screen linear birthday surprise experience with exact copy, Next buttons on screens 1–4, and Replay on screen 5 that resets the flow to screen 1.",
+      "acceptanceCriteria": [
+        "There are exactly 5 distinct pages/screens in a fixed sequence (1→2→3→4→5).",
+        "Pages 1–4 each have a heart-shaped button labeled “Next” that advances to the next page.",
+        "Page 5 includes a “Replay the Surprise” 💫 button that returns to Page 1 and resets the interactive inputs/selections.",
+        "All user-facing text matches the provided strings (including emojis and line breaks)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the top-level Surprise experience container that renders exactly 5 distinct screens in a fixed sequence, includes a heart-shaped “Next” button on screens 1–4, and includes a “Replay the Surprise” 💫 button on screen 5 that resets all in-memory interaction state back to the initial state. Use shadcn-ui components (e.g., Button/Card/Input/Textarea) where helpful for consistent UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/ScreenLayout.tsx",
+          "operation": "create",
+          "description": "Create a shared romantic layout wrapper used by all 5 screens (title, body copy with preserved line breaks, consistent spacing, and a fixed area for navigation controls) to ensure exactly-specified text is rendered consistently. Use shadcn-ui primitives where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page1Welcome.tsx",
+          "operation": "create",
+          "description": "Implement Page 1 content exactly (title/body with line breaks) plus the 4 selectable feeling options and the heart-shaped “Next” button. Ensure selections are handled via props/state from the container; use shadcn-ui Button for options if available; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page2Memories.tsx",
+          "operation": "create",
+          "description": "Implement Page 2 content exactly (title/text/question) plus the 4 selectable memory options and the heart-shaped “Next” button. Use shared layout and selected-state styling driven by container state; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page3Wish.tsx",
+          "operation": "create",
+          "description": "Implement Page 3 content exactly (title/text) plus a typing box for the wish and the heart-shaped “Next” button. Wire input value to container state so it persists during navigation within the session; use shadcn-ui Input/Textarea if present; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page4Love.tsx",
+          "operation": "create",
+          "description": "Implement Page 4 content exactly (title/text with line breaks) plus the heart-shaped “Next” button, using shared layout for consistency; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page5Finale.tsx",
+          "operation": "create",
+          "description": "Implement Page 5 finale content exactly (big centered text with line breaks) and a bottom “Replay the Surprise” 💫 button that triggers the container reset and returns to Page 1. If optionally reflecting the wish, do so without introducing any new user-facing text beyond the provided strings (e.g., purely decorative rendering); verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply a consistent romantic pastel dreamy theme (baby blue, lavender, blush pink, cream, soft gold sparkles) across all screens with soft/romantic typography and components.",
+      "acceptanceCriteria": [
+        "All pages share a coherent pastel palette (baby blue, lavender, blush pink, cream) with soft gold sparkle accents.",
+        "Typography, spacing, and components feel soft/romantic (rounded shapes, gentle shadows/glows) and are visually consistent across pages."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define global theme tokens and base styling for the pastel palette, soft romantic typography, rounded/glowy surfaces, and consistent spacing rules used across the 5 screens. Include reusable utility classes for gold sparkle accents and soft gradients used by the screen layout."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with named pastel colors (baby blue, lavender, blush pink, cream) and soft gold accent utilities, plus any needed animation/keyframe registrations referenced by the UI (while keeping styling consistent across all screens)."
+        },
+        {
+          "path": "frontend/src/components/surprise/ScreenLayout.tsx",
+          "operation": "modify",
+          "description": "Apply the shared theme styles (pastel gradient backgrounds, soft card surface, consistent typography scale) so all pages inherit a coherent romantic look. Use shadcn-ui components where beneficial for consistent styling; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add smooth fade transitions between screens for Next and Replay navigation.",
+      "acceptanceCriteria": [
+        "Navigating between pages uses a visible fade-out/fade-in transition (no abrupt cut).",
+        "“Replay the Surprise” returns to Page 1 with the same smooth transition."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/surprise/FadeTransition.tsx",
+          "operation": "create",
+          "description": "Create a lightweight fade transition wrapper used for switching between the 5 screens (fade-out then fade-in) and reusable for both Next and Replay transitions."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global keyframes/classes for gentle fade transitions (opacity + slight blur/translate if desired) used by the FadeTransition wrapper."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the screen switching logic through the FadeTransition wrapper so both “Next” and “Replay the Surprise” navigations animate smoothly (no abrupt cuts)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement ambient animated visuals (floating hearts, gentle glitter, tiny stars) across the experience plus required page-specific animated visuals and finale effects.",
+      "acceptanceCriteria": [
+        "Hearts, glitter, and stars are visibly animated (subtle motion) and do not block reading/interacting with content.",
+        "Page 1 shows a rabbit in a hopping pose/animation.",
+        "Page 2 shows a sparkle effect localized around the text area (not only global background).",
+        "Page 3 shows a rabbit holding a small balloon near the wish input.",
+        "Page 4 has a noticeable gold-glow sparkle effect plus slower-floating hearts than earlier pages.",
+        "Page 5 includes all specified finale effects simultaneously (confetti hearts, balloons, glitter rain, rabbits, pastel sky background)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/surprise/visuals/AmbientLayers.tsx",
+          "operation": "create",
+          "description": "Create ambient animation layers (floating hearts, gentle glitter, tiny stars) that can be enabled globally and tuned per page so visuals remain subtle and do not block content interaction (pointer-events disabled, low opacity, safe z-index)."
+        },
+        {
+          "path": "frontend/src/components/surprise/visuals/RabbitSprite.tsx",
+          "operation": "create",
+          "description": "Create a reusable rabbit visual component that renders the required generated rabbit assets and supports simple motion (e.g., hopping bob animation) depending on page. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/visuals/SparkleOverlay.tsx",
+          "operation": "create",
+          "description": "Create a sparkle overlay that can be applied globally and also localized around a specific text area (for Page 2). Use the generated sparkle tile asset for the texture; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/visuals/FinaleEffects.tsx",
+          "operation": "create",
+          "description": "Create Page 5-specific combined finale layers: confetti hearts, flying balloons, glitter rain, cute rabbits, and a soft pastel sky background, ensuring all effects run simultaneously and remain readable. Use generated pastel sky background and rabbit assets; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add keyframes/classes for: floating hearts drift (with adjustable speed), tiny star twinkle, glitter shimmer/rain, bunny hop bob, balloon float, and confetti fall—tuned to be gentle and non-blocking (opacity/z-index)."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page1Welcome.tsx",
+          "operation": "modify",
+          "description": "Wire Page 1 visuals: global floating hearts background plus the hopping rabbit using frontend/public/assets/generated/rabbit-hopping.dim_512x512.png. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page2Memories.tsx",
+          "operation": "modify",
+          "description": "Wire Page 2 localized sparkle effect around the text area (in addition to any ambient background), using frontend/public/assets/generated/sparkle-tile.dim_512x512.png for sparkle texture. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page3Wish.tsx",
+          "operation": "modify",
+          "description": "Wire Page 3 rabbit holding a tiny balloon near the wish input using frontend/public/assets/generated/rabbit-balloon.dim_512x512.png, positioned to avoid blocking typing. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page4Love.tsx",
+          "operation": "modify",
+          "description": "Wire Page 4 glowing gold sparkles plus slower-floating hearts than earlier pages (tuned parameters on ambient layers), ensuring the gold-glow sparkle effect is clearly noticeable. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page5Finale.tsx",
+          "operation": "modify",
+          "description": "Wire Page 5 finale background and effects simultaneously: pastel sky background (frontend/public/assets/generated/pastel-sky-bg.dim_1920x1080.png), confetti hearts, flying balloons, glitter rain, and cute rabbits (using the generated rabbit assets). Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add looping ambient instrumental background music that persists across screen navigation, attempts autoplay with fallback UI, and provides an unobtrusive mute/unmute control.",
+      "acceptanceCriteria": [
+        "Background music is present, loops, and persists across page navigation without restarting each time.",
+        "If browser autoplay is blocked, the UI provides an obvious way to start playback (e.g., a subtle “Tap to play music” prompt).",
+        "User can mute/unmute via a small control that remains accessible throughout the experience."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/music/ambient-birthday.mp3",
+          "operation": "create",
+          "description": "Add a local soft instrumental audio file to be used as the background music (no external streaming)."
+        },
+        {
+          "path": "frontend/src/components/surprise/audio/MusicProvider.tsx",
+          "operation": "create",
+          "description": "Create a music controller/provider that owns a single HTMLAudioElement instance (looping) so playback persists across screen changes without restarting. Implement autoplay attempt on experience start and track whether user interaction is needed for playback (autoplay-blocked fallback)."
+        },
+        {
+          "path": "frontend/src/components/surprise/audio/MusicControls.tsx",
+          "operation": "create",
+          "description": "Create a small, unobtrusive, always-accessible UI control to mute/unmute (and optionally adjust volume). Use shadcn-ui controls (e.g., Button/Slider) if available; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the 5-screen surprise experience with the MusicProvider and render MusicControls in a consistent location across all screens. Ensure navigation between screens does not recreate the audio instance, and show a clear fallback prompt to start music if autoplay is blocked."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Capture user interactions (selected options and wish text) and reflect selection state in the UI; preserve typed wish across navigation during the session; optionally reflect wish on the finale without adding new text.",
+      "acceptanceCriteria": [
+        "Option buttons on Pages 1 and 2 have a clear selected state after click/tap.",
+        "The wish text box accepts input and retains the typed content during the session when moving between pages.",
+        "No backend persistence is required; interactions persist at least within the current session/navigation flow."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/surprise/state/useSurpriseState.ts",
+          "operation": "create",
+          "description": "Create a local state hook to store: page index (1–5), Page 1 selected feeling, Page 2 selected memory, and Page 3 wish text. Expose actions for Next, Back (if needed internally), and Replay reset to initial state."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Use the shared surprise state hook to drive screen rendering, selected option highlighting, wish input value, and full reset on Replay (clearing selections and wish)."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page1Welcome.tsx",
+          "operation": "modify",
+          "description": "Implement clear selected styling for the chosen feeling option (persisting until changed) and keep it in sync with container state. Use shadcn-ui Button variants if applicable; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page2Memories.tsx",
+          "operation": "modify",
+          "description": "Implement clear selected styling for the chosen memory option (persisting until changed) and keep it in sync with container state. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page3Wish.tsx",
+          "operation": "modify",
+          "description": "Bind the wish input to container state so typed text persists across navigating forward/back within the session. Use shadcn-ui Input/Textarea if present; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/screens/Page5Finale.tsx",
+          "operation": "modify",
+          "description": "Optionally render the stored wish subtly (only if it introduces no new user-facing text beyond the specified strings—e.g., as decorative, non-labeled visual treatment). Ensure the default still matches required text verbatim."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add required generated images as static frontend assets and use them for rabbit and pastel sky visuals (no backend image fetching).",
+      "acceptanceCriteria": [
+        "All required generated images exist under frontend/public/assets/generated.",
+        "The rabbit and pastel sky visuals in the UI use the generated assets (not external URLs).",
+        "No backend endpoints are used to fetch or render images."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/rabbit-hopping.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated asset: Cute cartoon rabbit hopping pose, pastel outline, dreamy style (rabbit-hopping.dim_512x512.png)."
+        },
+        {
+          "path": "frontend/public/assets/generated/rabbit-balloon.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated asset: Cute cartoon rabbit holding a tiny balloon, pastel outline, dreamy style (rabbit-balloon.dim_512x512.png)."
+        },
+        {
+          "path": "frontend/public/assets/generated/pastel-sky-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated asset: Soft pastel sky background with subtle clouds and dreamy gradient (pastel-sky-bg.dim_1920x1080.png)."
+        },
+        {
+          "path": "frontend/public/assets/generated/sparkle-tile.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated asset: Small soft-gold sparkle/stars overlay tile, seamless pattern (sparkle-tile.dim_512x512.png)."
+        },
+        {
+          "path": "frontend/src/components/surprise/visuals/RabbitSprite.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/rabbit-hopping.dim_512x512.png and frontend/public/assets/generated/rabbit-balloon.dim_512x512.png directly as static assets (no external URLs). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/visuals/FinaleEffects.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/pastel-sky-bg.dim_1920x1080.png directly as the Page 5 background (no backend usage). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/surprise/visuals/SparkleOverlay.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/sparkle-tile.dim_512x512.png directly for sparkle textures/pattern overlays (no backend usage). Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

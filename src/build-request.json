@@ -1,0 +1,173 @@
+{
+  "kind": "build_request",
+  "title": "Romantic pastel 5-page interactive birthday surprise site with animations, music, and replay",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a 5-page, linear, interactive birthday website experience with the exact page breakdown/content below, including a heart-shaped “Next” button on Pages 1–4 and a “Replay the Surprise” button on Page 5 that restarts the experience back to Page 1.\n\nPage 1 — Welcome & Excitement\n- Title: “A Special Surprise for You 💙”\n- Body text (preserve line breaks):\n  “Hey baby… 💙\n  Tomorrow is your birthday 🎂✨\n  How are you feeling right now?”\n- Interactive options (buttons):\n  - “Super excited 😆”\n  - “Calm but happy 💙”\n  - “A little shy 🫣”\n  - “Very loved today 🫶”\n\nPage 2 — Our Love & Memories\n- Title: “Us ✨”\n- Text: “Every moment with you feels special to me.”\n- Question: “What’s your favorite memory with me?”\n- Options:\n  - “Late-night talks 🌙”\n  - “When we laugh together 😂”\n  - “Every moment 💙”\n  - “All of the above ✨”\n\nPage 3 — Birthday Wishes Page\n- Title: “Your Wish ✨”\n- Text: “Make a wish for your birthday…”\n- A typing box where he can write his wish\n\nPage 4 — Good Luck & Love Page\n- Title: “For You 💙”\n- Text (preserve line breaks):\n  “I wish you the best of luck in everything — your dreams, your goals, your life.\n  I’ll always cheer for you.”\n\nPage 5 — Grand Birthday Finale 🎉\n- Big centered text (preserve line breaks):\n  “HAPPY BIRTHDAY MY LOVE 💙🎂\n  I hope your day is as beautiful as you are.\n  I love you always.”\n- Bottom button: “Replay the Surprise” 💫",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a romantic, soft, and interactive 5-page birthday website for my boyfriend.",
+          "Add a small heart-shaped navigation button labeled “Next” on each page.",
+          "Button at the bottom: “Replay the Surprise” 💫"
+        ]
+      },
+      "acceptanceCriteria": [
+        "There are exactly 5 distinct pages/screens in a fixed sequence (1→2→3→4→5).",
+        "Pages 1–4 each have a heart-shaped button labeled “Next” that advances to the next page.",
+        "Page 5 includes a “Replay the Surprise” 💫 button that returns to Page 1 and resets the interactive inputs/selections.",
+        "All user-facing text matches the provided strings (including emojis and line breaks)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Apply a consistent romantic, pastel, dreamy visual theme across all pages using: baby blue, lavender, blush pink, cream, and soft gold sparkles. The overall feel must be warm, personal, and “magical like a birthday surprise.”",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "The aesthetic should be pastel and dreamy: baby blue, lavender, blush pink, cream, and soft gold sparkles.",
+          "Every page should feel warm, personal, and magical like a birthday surprise."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share a coherent pastel palette (baby blue, lavender, blush pink, cream) with soft gold sparkle accents.",
+        "Typography, spacing, and components feel soft/romantic (rounded shapes, gentle shadows/glows) and are visually consistent across pages."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add smooth fade transitions between pages/screens so navigation feels gentle and magical (including when using “Next” and “Replay the Surprise”).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Use smooth fade transitions between pages"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigating between pages uses a visible fade-out/fade-in transition (no abrupt cut).",
+        "“Replay the Surprise” returns to Page 1 with the same smooth transition."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement ambient animated visuals throughout the experience:\n- Floating hearts\n- Gentle glitter\n- Tiny stars\nAlso include page-specific visuals:\n- Page 1: floating hearts background + a cute hopping rabbit\n- Page 2: soft sparkles around the text\n- Page 3: a cute rabbit holding a tiny balloon\n- Page 4: glowing gold sparkles + slow floating hearts\n- Page 5: confetti hearts, flying balloons, glitter rain, cute rabbits, and a soft pastel sky background",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Include floating hearts, gentle glitter, tiny stars, and a cute cartoon rabbit that appears on different pages.",
+          "Background: floating hearts + one cute hopping rabbit.",
+          "Add soft sparkles around the text.",
+          "Add a cute rabbit holding a tiny balloon.",
+          "Add glowing gold sparkles and slow floating hearts.",
+          "Add: Confetti hearts, Flying balloons, Glitter rain, Cute rabbits, Soft pastel sky background"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hearts, glitter, and stars are visibly animated (subtle motion) and do not block reading/interacting with content.",
+        "Page 1 shows a rabbit in a hopping pose/animation.",
+        "Page 2 shows a sparkle effect localized around the text area (not only global background).",
+        "Page 3 shows a rabbit holding a small balloon near the wish input.",
+        "Page 4 has a noticeable gold-glow sparkle effect plus slower-floating hearts than earlier pages.",
+        "Page 5 includes all specified finale effects simultaneously (confetti hearts, balloons, glitter rain, rabbits, pastel sky background)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add soft instrumental background music that plays across the whole experience with gentle behavior:\n- Starts automatically when the experience begins (with a clear fallback if autoplay is blocked)\n- Loops seamlessly\n- Does not restart on every page navigation\n- Provide a simple, unobtrusive control to mute/unmute (and optionally adjust volume)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Use soft instrumental background music."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Background music is present, loops, and persists across page navigation without restarting each time.",
+        "If browser autoplay is blocked, the UI provides an obvious way to start playback (e.g., a subtle “Tap to play music” prompt).",
+        "User can mute/unmute via a small control that remains accessible throughout the experience."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Capture and use the user’s interactions on each page in the UI:\n- Page 1: selecting a feeling option visibly highlights the selected option (and keeps it selected until changed)\n- Page 2: selecting a memory option visibly highlights the selected option\n- Page 3: wish input should allow typing and preserve the entered text when navigating forward/back during the session\n- Optional: On Page 5, reflect the Page 3 wish somewhere subtly (only if it can be done without adding new user-facing text beyond what’s already specified)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Buttons (interactive options)",
+          "Provide a typing box where he can write his wish."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Option buttons on Pages 1 and 2 have a clear selected state after click/tap.",
+        "The wish text box accepts input and retains the typed content during the session when moving between pages.",
+        "No backend persistence is required; interactions persist at least within the current session/navigation flow."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add required static assets (generated images) to the frontend and use them in the UI/animations. Store generated assets under frontend/public/assets/generated and reference them directly from the frontend (do not serve images through the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Include ... a cute cartoon rabbit that appears on different pages.",
+          "Soft pastel sky background"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required generated images exist under frontend/public/assets/generated.",
+        "The rabbit and pastel sky visuals in the UI use the generated assets (not external URLs).",
+        "No backend endpoints are used to fetch or render images."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must not modify files under immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Backend must remain a single Motoko actor (no additional backend services)."
+  ],
+  "nonGoals": [
+    "Do not add Internet Identity authentication (not requested).",
+    "Do not persist the wish or selections to the backend/canister unless explicitly requested later.",
+    "Do not add third-party integrations (analytics, social APIs, external music streaming)."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Cute cartoon rabbit hopping pose, pastel outline, dreamy style (rabbit-hopping.dim_512x512.png)",
+      "Cute cartoon rabbit holding a tiny balloon, pastel outline, dreamy style (rabbit-balloon.dim_512x512.png)",
+      "Soft pastel sky background with subtle clouds and dreamy gradient (pastel-sky-bg.dim_1920x1080.png)",
+      "Small soft-gold sparkle/stars overlay tile, seamless pattern (sparkle-tile.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

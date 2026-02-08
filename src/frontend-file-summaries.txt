@@ -1,0 +1,21 @@
+{
+  "frontend/src/index.css": "Global styles with pastel dreamy OKLCH color palette (baby blue, lavender, blush pink, cream, soft gold), romantic animations (float, twinkle, shimmer, hop, confetti, balloons, glitter rain), heart-shaped button styling, and gradient utilities.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with pastel color tokens, custom border radii, Quicksand font family, dreamy shadows, and animation keyframes for the romantic birthday theme.",
+  "frontend/src/App.tsx": "Main application component managing the 5-page birthday surprise flow with fade transitions, state management via useSurpriseState hook, and MusicProvider wrapper for persistent background audio.",
+  "frontend/src/components/surprise/state/useSurpriseState.ts": "Custom hook managing surprise experience state including current page (1-5), selected feeling/memory options, wish text, navigation functions, and replay reset functionality.",
+  "frontend/src/components/surprise/FadeTransition.tsx": "Wrapper component providing smooth fade-in/fade-out transitions between pages using CSS animations controlled by isTransitioning prop.",
+  "frontend/src/components/surprise/ScreenLayout.tsx": "Reusable layout wrapper for all pages providing consistent title styling, centered content container, and customizable gradient background classes.",
+  "frontend/src/components/surprise/HeartButton.tsx": "Heart-shaped navigation button component with \"Next\" label, implemented using CSS transforms and pseudo-elements for the heart shape with hover animations.",
+  "frontend/src/components/surprise/screens/Page1Welcome.tsx": "Welcome page with greeting text, four feeling selection buttons, floating hearts/stars ambient layers, and hopping rabbit sprite.",
+  "frontend/src/components/surprise/screens/Page2Memories.tsx": "Memories page with special message, four memory selection buttons, localized sparkle overlay, and ambient visual layers.",
+  "frontend/src/components/surprise/screens/Page3Wish.tsx": "Wish input page with textarea for birthday wish, rabbit holding balloon sprite, and gentle ambient animations.",
+  "frontend/src/components/surprise/screens/Page4Love.tsx": "Good luck and love message page with slower floating hearts, gold-glow sparkle effects, and encouraging text.",
+  "frontend/src/components/surprise/screens/Page5Finale.tsx": "Grand finale page with birthday message, optional wish display, replay button, confetti hearts, balloons, glitter rain, rabbits, pastel sky background, and footer attribution.",
+  "frontend/src/components/surprise/visuals/AmbientLayers.tsx": "Ambient animation layer component rendering floating hearts, twinkling stars, and glitter particles with configurable intensity and gold-glow options.",
+  "frontend/src/components/surprise/visuals/RabbitSprite.tsx": "Rabbit sprite component displaying either hopping or balloon-holding rabbit from generated assets with optional hop animation.",
+  "frontend/src/components/surprise/visuals/SparkleOverlay.tsx": "Sparkle overlay component using tiled sparkle texture with shimmer/pulse-glow animations, supports localized or full-screen display with gold-glow option.",
+  "frontend/src/components/surprise/visuals/FinaleEffects.tsx": "Finale effects component combining pastel sky background, confetti hearts, floating balloons, glitter rain, and rabbit sprites for the grand birthday celebration.",
+  "frontend/src/components/surprise/audio/MusicProvider.tsx": "Music context provider managing persistent background audio playback across page navigation with autoplay attempt, fallback for blocked autoplay, and volume/mute controls.",
+  "frontend/src/components/surprise/audio/MusicControls.tsx": "Music control UI component displaying mute/unmute button or \"Tap to play music\" prompt when autoplay is blocked by browser.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks (intentionally minimal as backend has no methods and all state is client-side)."
+}

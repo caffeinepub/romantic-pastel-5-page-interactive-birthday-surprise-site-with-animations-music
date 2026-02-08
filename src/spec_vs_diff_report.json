@@ -1,0 +1,85 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T21:33:26.922Z",
+  "summary": "Frontend implements a 5-screen flow with client-side state, animated ambient layers, music provider/controls, and finale effects. However, multiple user-facing strings differ from the exact requested copy (including punctuation/line breaks), extra user-facing text was added (wish label, placeholder, footer/link), and Internet Identity/auth-related hooks were introduced despite being a non-goal/immutable-path constraint. Asset existence (generated images + music file) cannot be fully verified from the provided diff summary.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "All user-facing text matches the provided strings (including emojis and line breaks), including Page 5 big centered text and exact punctuation.",
+      "reason": "Several strings differ from the specified copy: Page 2 uses straight apostrophe (What's) instead of curly (What’s); Page 4 uses straight apostrophe (I'll) instead of curly (I’ll); Page 5 headline is split into different lines/words than the exact provided 3-line block.",
+      "evidence": [
+        "frontend/src/components/surprise/screens/Page2Memories.tsx",
+        "frontend/src/components/surprise/screens/Page4Love.tsx",
+        "frontend/src/components/surprise/screens/Page5Finale.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Optional Page 5 wish reflection only if it can be done without adding new user-facing text beyond what’s already specified.",
+      "reason": "Page 5 adds new visible label text \"Your wish ✨\" (and other extra UI text), which violates the constraint of not adding new user-facing text for the optional wish reflection.",
+      "evidence": [
+        "frontend/src/components/surprise/screens/Page5Finale.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "All required generated images exist under frontend/public/assets/generated.",
+      "reason": "The code references generated assets under /assets/generated, but the diff summary does not show any added files under frontend/public/assets/generated, so existence cannot be verified from the provided diff summary.",
+      "evidence": [
+        "frontend/src/components/surprise/visuals/RabbitSprite.tsx",
+        "frontend/src/components/surprise/visuals/FinaleEffects.tsx",
+        "frontend/src/components/surprise/visuals/SparkleOverlay.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Introduced/added Internet Identity authentication hooks/actor setup (AuthClient, identity-based actor creation), despite the explicit non-goal to not add Internet Identity authentication and the constraint not to modify files under immutable hook paths.",
+      "reason": "Diff shows new files at immutable paths implementing Internet Identity and identity-aware actor logic.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Added extra user-facing text not requested (Page 3 textarea placeholder, Page 5 footer copyright/link, and a \"Your wish ✨\" label).",
+      "reason": "BuildRequest requires exact provided strings and does not request these additional texts; optional wish reflection specifically disallows adding new user-facing text beyond what’s specified.",
+      "evidence": [
+        "frontend/src/components/surprise/screens/Page3Wish.tsx",
+        "frontend/src/components/surprise/screens/Page5Finale.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/surprise/FadeTransition.tsx",
+    "frontend/src/components/surprise/HeartButton.tsx",
+    "frontend/src/components/surprise/ScreenLayout.tsx",
+    "frontend/src/components/surprise/audio/MusicControls.tsx",
+    "frontend/src/components/surprise/audio/MusicProvider.tsx",
+    "frontend/src/components/surprise/screens/Page1Welcome.tsx",
+    "frontend/src/components/surprise/screens/Page2Memories.tsx",
+    "frontend/src/components/surprise/screens/Page3Wish.tsx",
+    "frontend/src/components/surprise/screens/Page4Love.tsx",
+    "frontend/src/components/surprise/screens/Page5Finale.tsx",
+    "frontend/src/components/surprise/state/useSurpriseState.ts",
+    "frontend/src/components/surprise/visuals/AmbientLayers.tsx",
+    "frontend/src/components/surprise/visuals/FinaleEffects.tsx",
+    "frontend/src/components/surprise/visuals/RabbitSprite.tsx",
+    "frontend/src/components/surprise/visuals/SparkleOverlay.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

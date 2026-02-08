@@ -1,0 +1,159 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-5-page-linear-interactive-birthday-website-experience-with-the-exact-page-breakdown-content-below-including-a-heart-shaped-next-button-on-pages-1-4-and-a-replay-the-surprise-button-on-page-5-that-restarts-the-experience-back-to-page-1-page-1-welcome-excitement-title-a-special-surprise-for-you-body-text-preserve-line-breaks-hey-baby-tomorrow-is-your-birthday-how-are-you-feeling-right-now-interactive-options-buttons-super-excited-calm-but-happy-a-little-shy-very-loved-today-page-2-our-love-memories-title-us-text-every-moment-with-you-feels-special-to-me-question-what-s-your-favorite-memory-with-me-options-late-night-talks-when-we-laugh-together-every-moment-all-of-the-above-page-3-birthday-wishes-page-title-your-wish-text-make-a-wish-for-your-birthday-a-typing-box-where-he-can-write-his-wish-page-4-good-luck-love-page-title-for-you-text-preserve-line-breaks-i-wish-you-the-best-of-luck-in-everything-your-dreams-your-goals-your-life-i-ll-always-cheer-for-you-page-5-grand-birthday-finale-big-centered-text-preserve-line-breaks-happy-birthday-my-love-i-hope-your-day-is-as-beautiful-as-you-are-i-love-you-always-bottom-button-replay-the-surprise",
+      "featureTitle": "Create a 5-page, linear, interactive birthday website experience with the exact page breakdown/content below, including a heart-shaped “Next” button on Pages 1–4 and a “Replay the Surprise” button on Page 5 that restarts the experience back to Page 1.\n\nPage 1 — Welcome & Excitement\n- Title: “A Special Surprise for You 💙”\n- Body text (preserve line breaks):\n  “Hey baby… 💙\n  Tomorrow is your birthday 🎂✨\n  How are you feeling right now?”\n- Interactive options (buttons):\n  - “Super excited 😆”\n  - “Calm but happy 💙”\n  - “A little shy 🫣”\n  - “Very loved today 🫶”\n\nPage 2 — Our Love & Memories\n- Title: “Us ✨”\n- Text: “Every moment with you feels special to me.”\n- Question: “What’s your favorite memory with me?”\n- Options:\n  - “Late-night talks 🌙”\n  - “When we laugh together 😂”\n  - “Every moment 💙”\n  - “All of the above ✨”\n\nPage 3 — Birthday Wishes Page\n- Title: “Your Wish ✨”\n- Text: “Make a wish for your birthday…”\n- A typing box where he can write his wish\n\nPage 4 — Good Luck & Love Page\n- Title: “For You 💙”\n- Text (preserve line breaks):\n  “I wish you the best of luck in everything — your dreams, your goals, your life.\n  I’ll always cheer for you.”\n\nPage 5 — Grand Birthday Finale 🎉\n- Big centered text (preserve line breaks):\n  “HAPPY BIRTHDAY MY LOVE 💙🎂\n  I hope your day is as beautiful as you are.\n  I love you always.”\n- Bottom button: “Replay the Surprise” 💫",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/surprise/ScreenLayout.tsx",
+        "frontend/src/components/surprise/screens/Page1Welcome.tsx",
+        "frontend/src/components/surprise/screens/Page2Memories.tsx",
+        "frontend/src/components/surprise/screens/Page3Wish.tsx",
+        "frontend/src/components/surprise/screens/Page4Love.tsx",
+        "frontend/src/components/surprise/screens/Page5Finale.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-consistent-romantic-pastel-dreamy-visual-theme-across-all-pages-using-baby-blue-lavender-blush-pink-cream-and-soft-gold-sparkles-the-overall-feel-must-be-warm-personal-and-magical-like-a-birthday-surprise",
+      "featureTitle": "Apply a consistent romantic, pastel, dreamy visual theme across all pages using: baby blue, lavender, blush pink, cream, and soft gold sparkles. The overall feel must be warm, personal, and “magical like a birthday surprise.”",
+      "files": [
+        "frontend/src/components/surprise/ScreenLayout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-smooth-fade-transitions-between-pages-screens-so-navigation-feels-gentle-and-magical-including-when-using-next-and-replay-the-surprise",
+      "featureTitle": "Add smooth fade transitions between pages/screens so navigation feels gentle and magical (including when using “Next” and “Replay the Surprise”).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/surprise/FadeTransition.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-ambient-animated-visuals-throughout-the-experience-floating-hearts-gentle-glitter-tiny-stars-also-include-page-specific-visuals-page-1-floating-hearts-background-a-cute-hopping-rabbit-page-2-soft-sparkles-around-the-text-page-3-a-cute-rabbit-holding-a-tiny-balloon-page-4-glowing-gold-sparkles-slow-floating-hearts-page-5-confetti-hearts-flying-balloons-glitter-rain-cute-rabbits-and-a-soft-pastel-sky-background",
+      "featureTitle": "Implement ambient animated visuals throughout the experience:\n- Floating hearts\n- Gentle glitter\n- Tiny stars\nAlso include page-specific visuals:\n- Page 1: floating hearts background + a cute hopping rabbit\n- Page 2: soft sparkles around the text\n- Page 3: a cute rabbit holding a tiny balloon\n- Page 4: glowing gold sparkles + slow floating hearts\n- Page 5: confetti hearts, flying balloons, glitter rain, cute rabbits, and a soft pastel sky background",
+      "files": [
+        "frontend/src/components/surprise/screens/Page1Welcome.tsx",
+        "frontend/src/components/surprise/screens/Page2Memories.tsx",
+        "frontend/src/components/surprise/screens/Page3Wish.tsx",
+        "frontend/src/components/surprise/screens/Page4Love.tsx",
+        "frontend/src/components/surprise/screens/Page5Finale.tsx",
+        "frontend/src/components/surprise/visuals/AmbientLayers.tsx",
+        "frontend/src/components/surprise/visuals/FinaleEffects.tsx",
+        "frontend/src/components/surprise/visuals/RabbitSprite.tsx",
+        "frontend/src/components/surprise/visuals/SparkleOverlay.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-soft-instrumental-background-music-that-plays-across-the-whole-experience-with-gentle-behavior-starts-automatically-when-the-experience-begins-with-a-clear-fallback-if-autoplay-is-blocked-loops-seamlessly-does-not-restart-on-every-page-navigation-provide-a-simple-unobtrusive-control-to-mute-unmute-and-optionally-adjust-volume",
+      "featureTitle": "Add soft instrumental background music that plays across the whole experience with gentle behavior:\n- Starts automatically when the experience begins (with a clear fallback if autoplay is blocked)\n- Loops seamlessly\n- Does not restart on every page navigation\n- Provide a simple, unobtrusive control to mute/unmute (and optionally adjust volume)",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/surprise/audio/MusicControls.tsx",
+        "frontend/src/components/surprise/audio/MusicProvider.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-capture-and-use-the-user-s-interactions-on-each-page-in-the-ui-page-1-selecting-a-feeling-option-visibly-highlights-the-selected-option-and-keeps-it-selected-until-changed-page-2-selecting-a-memory-option-visibly-highlights-the-selected-option-page-3-wish-input-should-allow-typing-and-preserve-the-entered-text-when-navigating-forward-back-during-the-session-optional-on-page-5-reflect-the-page-3-wish-somewhere-subtly-only-if-it-can-be-done-without-adding-new-user-facing-text-beyond-what-s-already-specified",
+      "featureTitle": "Capture and use the user’s interactions on each page in the UI:\n- Page 1: selecting a feeling option visibly highlights the selected option (and keeps it selected until changed)\n- Page 2: selecting a memory option visibly highlights the selected option\n- Page 3: wish input should allow typing and preserve the entered text when navigating forward/back during the session\n- Optional: On Page 5, reflect the Page 3 wish somewhere subtly (only if it can be done without adding new user-facing text beyond what’s already specified)",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/surprise/screens/Page1Welcome.tsx",
+        "frontend/src/components/surprise/screens/Page2Memories.tsx",
+        "frontend/src/components/surprise/screens/Page3Wish.tsx",
+        "frontend/src/components/surprise/screens/Page5Finale.tsx",
+        "frontend/src/components/surprise/state/useSurpriseState.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-required-static-assets-generated-images-to-the-frontend-and-use-them-in-the-ui-animations-store-generated-assets-under-frontend-public-assets-generated-and-reference-them-directly-from-the-frontend-do-not-serve-images-through-the-backend",
+      "featureTitle": "Add required static assets (generated images) to the frontend and use them in the UI/animations. Store generated assets under frontend/public/assets/generated and reference them directly from the frontend (do not serve images through the backend).",
+      "files": [
+        "frontend/src/components/surprise/visuals/FinaleEffects.tsx",
+        "frontend/src/components/surprise/visuals/RabbitSprite.tsx",
+        "frontend/src/components/surprise/visuals/SparkleOverlay.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
